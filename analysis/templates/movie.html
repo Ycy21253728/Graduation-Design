@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>豆瓣top250数据可视化</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <meta name="referrer" content="no-referrer">
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/index"><span>豆瓣top250数据分析</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/index">首页 <i class="la la-angle-down"></i></a></li>
+          <li><a href="/movie">电影</a></li>
+          <li><a href="/analysis">分析</a></li>
+          <li><a href="/wordcloud">词云</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>豆瓣电影Top250名单</h2>
+        </div>
+            <!-- ======= Counts Section ======= -->
+        <section class="counts section-bg">
+          <div class="container">
+            <table class="table table-striped">
+              <tr>
+                <td>序号</td>
+                <td>电影中文名</td>
+                <td>电影外文名</td>
+                <td>图片</td>
+                <td>概述</td>
+                <td>评分</td>
+                <td>评价人数</td>
+                <td>电影信息</td>
+              </tr>
+
+                {% for i in list %}
+                <tr>
+                  <td>{{i[0]}}</td>
+                  <td><a href="{{i[3]}}">{{i[1]}}</a> </td>
+                  <td><a href="{{i[3]}}">{{i[2]}}</a></td>
+                  <td> <img src="{{i[4]}}" alt="{{i[1]}}" width="100"> </td>
+                  <td>{{i[5]}}</td>
+                  <td>{{i[6]}}</td>
+                  <td>{{i[7]}}</td>
+                  <td>{{i[8]}}</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+          </div>
+        </section><!-- End Counts Section -->
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <div class="paginator">
+      <span class="prev">
+          &lt;前页
+      </span>
+      <span class="thispage">1</span>
+              
+      <a href="?start=25&amp;filter=" >2</a>
+      <a href="?start=50&amp;filter=" >3</a>
+      <a href="?start=75&amp;filter=" >4</a>
+      <a href="?start=100&amp;filter=" >5</a>
+      <a href="?start=125&amp;filter=" >6</a>
+      <a href="?start=150&amp;filter=" >7</a>
+      <a href="?start=175&amp;filter=" >8</a>
+      <a href="?start=200&amp;filter=" >9</a>
+      <a href="?start=225&amp;filter=" >10</a>
+      
+      <span class="next">
+          <link rel="next" href="?start=25&amp;filter="/>
+          <a href="?start=25&amp;filter=" >后页&gt;</a>
+      </span>
+      <span class="count">(共250条)</span>
+    </div>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ycy</span></strong>. All Rights Reserved
+      </div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
